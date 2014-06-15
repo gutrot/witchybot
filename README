@@ -1,0 +1,5 @@
+WITCHYBOT, a simple, configurable Python twitter bot
+
+I whipped this up in a few hours, and I'm having a lot of fun tweaking and honing the output, so I'm sharing it.
+
+Using three lists and one config file, anyone can have a twitter bot as picky or as indiscriminate as he wants.  Have fun!
