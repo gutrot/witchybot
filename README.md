@@ -1,4 +1,0 @@
-witchybot
-=========
-
-Python Twitter bot
