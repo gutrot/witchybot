@@ -1,5 +1,23 @@
-WITCHYBOT, a simple, configurable Python twitter bot
+WITCHYBOT, a simple, configurable Python twitter retweet bot
 
-I whipped this up in a few hours, and I'm having a lot of fun tweaking and honing the output, so I'm sharing it.
+I whipped this up in a few hours, and I'm having a lot of fun tweaking and honing the output, so why not share it?
 
-Using three lists and one config file, anyone can have a twitter bot as picky or as indiscriminate as he wants.  Have fun!
+Using four lists and one config file, anyone can have a twitter bot as picky or as indiscriminate as he wants.  Have fun!
+
+LISTS:
+searchlist.dat	:A new-line delimited list of strings the bot will search to begin collecting Tweets.  So, if you want to start with tweets about baseball, you might add words like baseball, pitcher, batter, or a few team names.  NOTE: Unless you are using the Twitter Firehose, there's a limit to how much you can programmatically search every fifteen minutes.  In this case, too many items in searchlist.dat will grab too many tweets and it will break. (Until I, or someone, properly handles that error).
+
+lamelist.dat	:A new-line delimited list of strings the bot will use to filter out tweets from the initial search pool.  If these words or phrases exist anywhere in a tweet, it is immediately discarded.
+
+scorelist.dat	:A new-line delimited list of strings the bot will use to score each tweet.  These are the words you want tweets to have!  The more of these words present, the higher that tweet's score.  The tweet with the highest score out of the filtered pool is the winner, which get's retweeted.
+
+alreadylist.dat	:A new-line delimited list of tweet IDs of tweets which have already been selected by witchybot.  This helps prevent the same "winning" tweet from being selected multiple times.
+
+CONFIGURATION FILE:
+consumer_key	:Twitter app auth consumer key
+consumer_secret	:Twitter app auth consumer secret
+access_token_key	:Twitter app auth access token key
+access_token_secret	:Twitter app auth access token secret
+lang	:
+recORpop	:either rec to get recent tweets or pop to get popular tweets during the collection phase.
+threshold	:double value scoring threshold.  If the "winning" tweet score is below this threshold, it will not be retweeted.
